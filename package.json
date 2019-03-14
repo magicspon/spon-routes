@@ -1,6 +1,6 @@
 {
 	"name": "@spon/routes",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "a small wrapper around dom-delegate for backbone object styled events",
 	"keywords": [],
 	"homepage": "https://github.com/magicspon/spon-routes#readme",
@@ -72,7 +72,6 @@
 		"@babel/plugin-transform-runtime": "^7.2.0",
 		"@babel/preset-env": "^7.0.0-beta.54",
 		"@babel/runtime": "^7.3.1",
-		"@rematch/core": "^1.0.6",
 		"babel-core": "^7.0.0-bridge.0",
 		"babel-eslint": "^10.0.1",
 		"babel-jest": "22.4.3",

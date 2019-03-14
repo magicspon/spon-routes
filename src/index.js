@@ -104,6 +104,12 @@ function router({
 				}
 			},
 
+			async onBeforeExit({ update }) {
+				await update(next => {
+					next()
+				})
+			},
+
 			async onExit({ update, prevHtml }) {
 				await update(next => {
 					prevHtml.parentNode.removeChild(prevHtml)
@@ -206,9 +212,9 @@ function router({
 					'default'
 			]
 
-		if (exitingTransition.beforeExit) {
-			exitingTransition.beforeExit()
-		}
+		// if (exitingTransition.onBeforeExit) {
+
+		// }
 
 		const key = getKey(document.body, settings.pageSelector)
 
@@ -219,11 +225,14 @@ function router({
 		prevHtml = rootNode
 		eventBus.emit('route:before/onExit', { params })
 
-		await store.dispatch({
-			...params,
-			key: key || null,
-			fetchOptions
-		})
+		await Promise.all([
+			store.dispatch({
+				...params,
+				key: key || null,
+				fetchOptions
+			}),
+			exitingTransition.onBeforeExit({ update, params, prevHtml })
+		])
 		await start(store.getState())
 
 		eventBus.emit('route:after/onExit', { params })
