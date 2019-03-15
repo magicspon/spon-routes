@@ -99,7 +99,7 @@ function router({
 			name: 'default',
 			container: settings.rootNode,
 			fetchOptions: {
-				headers: {
+				headers: settings.headers || {
 					'X-Spon-Header': 'X-Spon-Header'
 				}
 			},
