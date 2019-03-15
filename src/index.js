@@ -267,10 +267,6 @@ function router({
 	 * @return {void}
 	 */
 	function clickHandle(e, elm) {
-
-		console.log('hello')
-
-
 		if (preventClick(e, elm, settings.ignoreProp)) {
 			e.preventDefault()
 			const { href } = elm
@@ -287,17 +283,9 @@ function router({
 		}
 	}
 
-
 	del.addEvents({
-		[`click a[href^="/"]:not([${settings.ignoreProp}])`]: clickHandle 
+		[`click a[href^="/"]:not([${settings.ignoreProp}])`]: clickHandle
 	})
-
-
-	console.log(`a:not([${settings.ignoreProp}])`)
-
-	
-
-	setTimeout(() => {})
 
 	return {
 		/**
