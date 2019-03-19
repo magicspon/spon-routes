@@ -240,6 +240,9 @@ function router({
 
 	history.listen((location, event) => {
 		const { state: params } = location
+
+		if (location.pathname === window.location.pathname) return
+
 		action = event
 		if (event === 'POP') {
 			historyStack.pop()
