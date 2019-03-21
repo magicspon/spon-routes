@@ -239,9 +239,10 @@ function router({
 	}
 
 	history.listen((location, event) => {
-		const { state: params } = location
-
-		if (location.pathname === window.location.pathname) return
+		const { state: params, hash } = location
+		// bail if the location is a hash on the same page
+		// any url changes will have a params object
+		if (hash && !params) return
 
 		action = event
 		if (event === 'POP') {
