@@ -1,6 +1,6 @@
 {
 	"name": "@spon/routes",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "a small wrapper around dom-delegate for backbone object styled events",
 	"keywords": [],
 	"homepage": "https://github.com/magicspon/spon-routes#readme",
@@ -55,7 +55,7 @@
 		]
 	},
 	"peerDependencies": {
-		"@spon/domevents": "^0.0.4"
+		"@spon/domevents": "^1.0.0"
 	},
 	"dependencies": {
 		"history": "^4.7.2",
